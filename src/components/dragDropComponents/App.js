@@ -18,6 +18,7 @@ function App() {
       setData(defaultData);
     }
   }, [setData]);
+  
   return (
     <div className="App">
       <header className="App-header">

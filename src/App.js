@@ -3,6 +3,9 @@ import React, { useState, useEffect } from "react";
 // import ReactDOM from "react-dom";
 import "./index.css";
 import Cards from "./components/cards";
+
+import HeaderApp from "./HeaderApp";
+import AboutMeApp from "./AboutMeApp";
 // import Notes from "./components/notes";
 // custom components
 import NewCardForm from "./components/newCardForm";
@@ -15,25 +18,25 @@ const MainApp = () => {
   // {"content": [{"id": 0, "notes": [{"content": "and this is note", "id": 0, "mark": false}], "title": "HI this is card"}]}
 
   // get data from server and set content
-  useEffect(() => {
-    const getTasks = async () => {
-      const contentFomServer = await fetchContent();
-      setContent(contentFomServer);
-      console.log(content);
-    };
-    getTasks();
-  }, []);
+  // useEffect(() => {
+  //   const getTasks = async () => {
+  //     const contentFomServer = await fetchContent();
+  //     setContent(contentFomServer);
+  //     console.log(content);
+  //   };
+  //   getTasks();
+  // }, []);
 
-  const fetchContent = async () => {
-    const response = await fetch(
-      "https://json.extendsclass.com/bin/138ae146c385"
-    );
-    const data = await response.json();
-    console.log(data);
-    const bedata = data["content"];
-    console.log(data);
-    return bedata;
-  };
+  // const fetchContent = async () => {
+  //   const response = await fetch(
+  //     "https://json.extendsclass.com/bin/138ae146c385"
+  //   );
+  //   const data = await response.json();
+  //   console.log(data);
+  //   const bedata = data["content"];
+  //   console.log(data);
+  //   return bedata;
+  // };
 
   /*
 
@@ -97,7 +100,7 @@ const MainApp = () => {
     setContent(content);
   };
   const deleteCard = async (cardId) => {
-    await fetch(`https://json.extendsclass.com/bin/138ae146c385/${cardId}`, {
+    await fetch(`https://json.extendsclass.com/bin/138ae146c385`, {
       method: "DELETE",
     });
 
@@ -136,17 +139,27 @@ const MainApp = () => {
   };
 
   return (
-    <div id="content" className="wrapper">
-      <div id="overlay" className=""></div>
-      <Cards
-        content={content}
-        newNoteHandler={AddNewNoteHandler}
-        deleteNote={deleteNote}
-        deleteCard={deleteCard}
-        noteMarkerer={markNote}
-      />
-      <NewCardForm NewCardHandler={AddNewCardHandler} />
-    </div>
+    <>
+      <header id="header" class="header">
+       <HeaderApp /> 
+      </header>
+      <main id="main" class="main">
+        <div id="content" className="wrapper">
+          <div id="overlay" className=""></div>
+          <Cards
+            content={content}
+            newNoteHandler={AddNewNoteHandler}
+            deleteNote={deleteNote}
+            deleteCard={deleteCard}
+            noteMarkerer={markNote}
+          />
+          <NewCardForm NewCardHandler={AddNewCardHandler} />
+        </div>
+      </main>
+      <div id="secondPage" class="main">
+        <AboutMeApp />
+      </div>
+    </>
   );
   //   }}
   // />

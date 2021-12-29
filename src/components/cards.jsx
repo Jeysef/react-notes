@@ -19,6 +19,7 @@ const Cards = ({
   };
 
   const [noteTitle, setnoteTitle] = useState("");
+  
 
   const setTextValue = (event) => {
     // event.nativeEvent.target.previousElementSibling.value = "";

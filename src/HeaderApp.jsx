@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
-// import React, { Component } from "react";
+import React, { Component } from "react";
 import "./index.css";
+import LoginForm, { toogle } from "./components/loginForm";
 import BurgerMenu from "./components/BurgerMenu";
 
 const HeaderApp = () => {
@@ -9,6 +10,16 @@ const HeaderApp = () => {
   * FUNCTIONS
 
   */
+  const toogle = () => {
+    document.getElementById("menu-window-toogle").checked =
+      !document.getElementById("menu-window-toogle").checked;
+    if (document.getElementById("menu-window-toogle").checked) {
+      document.getElementsByClassName("menu-window-center")[0].style.scale = 0;
+    } else {
+      document.getElementsByClassName("menu-window-center")[0].style.scale = 1;
+    }
+  };
+
   return (
     <>
       <div className="logo">
@@ -39,7 +50,6 @@ const HeaderApp = () => {
                     onClick="toogleBackgroundColourMenu()"
                     className="button"
                     title="Close Menu"
-                    //   style="font-weight: bold; padding: 10px"
                   >
                     &times;
                   </span>
@@ -57,7 +67,17 @@ const HeaderApp = () => {
             </div>
           </li>
           <li className="bookmark">
-            <p>Settings</p>
+            <div
+              style={{
+                width: "100%",
+                height: "100%",
+                position: "absolute",
+                left: "0",
+              }}
+              onClick={toogle}
+            ></div>
+            <p>log in</p>
+            <LoginForm />
           </li>
           <li className="bookmark">
             <a href="#secondPage">About Me</a>
