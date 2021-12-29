@@ -1,13 +1,1249 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/*! modern-normalize v1.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
+
+/*
+Document
+========
+*/
+
+/**
+Use a better box model (opinionated).
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/**
+Use a more readable tab size (opinionated).
+*/
+
+:root {
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  --headerHeight: 40px;
+}
+
+/**
+1. Correct the line height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+*/
+
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  scroll-behavior: smooth;
+}
+
+/*
+Sections
+========
+*/
+
+/**
+Remove the margin in all browsers.
+*/
+
+body {
+  margin: 0;
+}
+
+/**
+Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
+*/
+
+body {
+  font-family: system-ui, -apple-system,
+    /* Firefox supports this but not yet `system-ui` */ "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+/*
+Grouping content
+================
+*/
+
+/**
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+*/
+
+hr {
+  height: 0; /* 1 */
+  color: inherit; /* 2 */
+}
+
+/*
+Text-level semantics
+====================
+*/
+
+/**
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+abbr[title] {
+  -webkit-text-decoration: underline dotted;
+  text-decoration: underline dotted;
+}
+
+/**
+Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+1. Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
+2. Correct the odd 'em' font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo,
+    monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+Add the correct font size in all browsers.
+*/
+
+small {
+  font-size: 80%;
+}
+
+/**
+Prevent 'sub' and 'sup' elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+Tabular data
+============
+*/
+
+/**
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+*/
+
+table {
+  text-indent: 0; /* 1 */
+  border-color: inherit; /* 2 */
+}
+
+/*
+Forms
+=====
+*/
+
+/**
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+Remove the inheritance of text transform in Edge and Firefox.
+1. Remove the inheritance of text transform in Firefox.
+*/
+
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+Correct the inability to style clickable types in iOS and Safari.
+*/
+
+button,
+[type="button"] {
+  -webkit-appearance: button;
+}
+
+/**
+Remove the inner border and padding in Firefox.
+*/
+
+/**
+Restore the focus styles unset by the previous rule.
+*/
+
+/**
+Remove the additional ':invalid' styles in Firefox.
+See: https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737
+*/
+
+/**
+Remove the padding so developers are not caught out when they zero out 'fieldset' elements in all browsers.
+*/
+
+legend {
+  padding: 0;
+}
+
+/**
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+
+progress {
+  vertical-align: baseline;
+}
+
+/**
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+
+/**
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+
+/**
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+
+/**
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to 'inherit' in Safari.
+*/
+
+/*
+Interactive
+===========
+*/
+
+/*
+Add the correct display in Chrome and Safari.
+*/
+
+summary {
+  display: list-item;
+}
+
+/**
+ * Manually forked from SUIT CSS Base: https://github.com/suitcss/base
+ * A thin layer on top of normalize.css that provides a starting point more
+ * suitable for web applications.
+ */
+
+/**
+ * Removes the default spacing and border for appropriate elements.
+ */
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+button {
+  background-color: transparent;
+  background-image: none;
+}
+
+/**
+ * Work around a Firefox/IE bug where the transparent `button` background
+ * results in a loss of the default `button` focus styles.
+ */
+
+button:focus {
+  /* outline: 1px dotted; */
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * Tailwind custom reset styles
+ */
+
+/**
+ * 1. Use the user's configured `sans` font-family (with Tailwind's default
+ *    sans-serif font stack as a fallback) as a sane default.
+ * 2. Use Tailwind's default "normal" line-height so the user isn' forced
+ *    to override it to ensure consistency even when using the default theme.
+ */
+
+html,
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 1 */
+  line-height: 1.5; /* 2 */
+}
+
+/**
+ * 1. Prevent padding and border from affecting element width.
+ *
+ *    We used to set this in the html element and inherit from
+ *    the parent element for everything else. This caused issues
+ *    in shadow-dom-enhanced elements like <details> where the content
+ *    is wrapped by a div with box-sizing set to `content-box`.
+ *
+ *    https://github.com/mozdevs/cssremedy/issues/4
+ *
+ *
+ * 2. Allow adding a border to an element by just adding a border-width.
+ *
+ *    By default, the way the browser specifies that an element should have no
+ *    border is by setting it's border-style to `none` in the user-agent
+ *    stylesheet.
+ *
+ *    In order to easily add borders to elements by just setting the `border-width`
+ *    property, we change the default border-style for all elements to `solid`, and
+ *    use border-width to hide them instead. This way our `border` utilities only
+ *    need to set the `border-width` property instead of the entire `border`
+ *    shorthand, making our border utilities much more straightforward to compose.
+ *
+ *    https://github.com/tailwindcss/tailwindcss/pull/116
+ */
+
+*,
+::before,
+::after {
+  box-sizing: border-box; /* 1 */
+  border-width: 0; /* 2 */
+  border-style: solid; /* 2 */
+  border-color: #e4e4e7; /* 2 */
+}
+
+/*
+ * Ensure horizontal rules are visible by default
+ */
+
+hr {
+  border-top-width: 1px;
+}
+
+/**
+ * Undo the `border-style: none` reset that Normalize applies to images so that
+ * our `border-{width}` utilities have the expected effect.
+ *
+ * The Normalize reset is unnecessary for us since we default the border-width
+ * to 0 on all elements.
+ *
+ * https://github.com/tailwindcss/tailwindcss/issues/362
+ */
+
+img {
+  border-style: solid;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #a1a1aa;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #a1a1aa;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #a1a1aa;
+}
+
+button {
+  cursor: pointer;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/**
+ * Reset links to optimize for opt-in styling instead of
+ * opt-out.
+ */
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/**
+ * Reset form element properties that are easy to forget to
+ * style explicitly so you don't inadvertently introduce
+ * styles that deviate from your design system. These styles
+ * supplement a partial reset that is already applied by
+ * normalize.css.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  padding: 0;
+  line-height: inherit;
+  color: inherit;
+}
+
+/**
+ * Use the configured 'mono' font family for elements that
+ * are expected to be rendered with a monospace font, falling
+ * back to the system monospace stack if there is no configured
+ * 'mono' font family.
+ */
+
+pre,
+code,
+kbd,
+samp {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+
+/**
+ * Make replaced elements `display: block` by default as that's
+ * the behavior you want almost all of the time. Inspired by
+ * CSS Remedy, with `svg` added as well.
+ *
+ * https://github.com/mozdevs/cssremedy/issues/14
+ */
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+}
+
+/* START HERE */
+/* MY  OWN elements */
+colors {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  justify-content: space-between;
+}
+red {
+  display: flex;
+  background-color: rgb(232, 32, 32);
+  align-items: center;
+  margin: 5px;
+  border: 1px solid black;
+  content: "&#9632;";
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+green {
+  display: flex;
+  background-color: rgb(55, 179, 51);
+  align-items: center;
+  margin: 5px;
+  border: 1px solid black;
+  content: "&#9632;";
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+gray {
+  display: flex;
+  background-color: rgb(88, 88, 88);
+  align-items: center;
+  margin: 5px;
+  border: 1px solid black;
+  content: "&#9632;";
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+blue {
+  display: flex;
+  background-color: rgb(14, 67, 167);
+  align-items: center;
+  margin: 5px;
+  border: 1px solid black;
+  content: "&#9632;";
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+white {
+  display: flex;
+  background-color: rgb(228, 228, 231);
+  align-items: center;
+  margin: 5px;
+  border: 1px solid black;
+  content: "&#9632;";
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+/* end */
+body {
+  width: 100%;
+}
+.bg_red {
+  background-color: rgb(232, 32, 32) !important;
+  background-blend-mode: lighten;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0 0);
+}
+.bg_blue {
+  background-color: rgb(81, 129, 216) !important;
+  background-blend-mode: lighten;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0 0);
+}
+.bg_green {
+  background-color: rgb(55, 179, 51) !important;
+  background-blend-mode: lighten;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0 0);
+}
+.bg_gray {
+  background-color: rgb(150, 150, 150) !important;
+  background-blend-mode: lighten;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0 0);
+}
+.bg_white {
+  --bg-opacity: 1;
+  background-color: rgba(255, 255, 255, var(--bg-opacity)) !important;
+  background-blend-mode: lighten;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0 0);
+}
+
+.red {
+  color: rgb(232, 32, 32) !important;
+}
+.blue {
+  color: rgb(81, 129, 216) !important;
+}
+.green {
+  color: rgb(55, 179, 51) !important;
+}
+.gray {
+  color: rgb(150, 150, 150) !important;
+}
+.white {
+  color: rgb(255, 255, 255) !important;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+.darken {
+  background-blend-mode: darken;
+}
+.flex-evenly {
+  display: flex;
+  justify-content: space-evenly;
+}
+.d-block {
+  display: block !important;
+}
+.scale0 {
+  transform: scale(0);
+}
+.scale1 {
+  transform: scale(1);
+}
+/* end of multiname */
+.header {
+  z-index: 5;
+  display: flex;
+  background-color: rgb(68, 187, 167);
+  background-image: linear-gradient(
+    270deg,
+    rgb(68, 187, 167),
+    rgb(214, 97, 224)
+  );
+  --headerHeight: 40px;
+  max-height: var(--headerHeight);
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  max-height: 40px;
+  min-height: 38px;
+}
+.logo {
+  justify-content: center;
+  text-align: center;
+  vertical-align: middle;
+  background-color: rgba(102, 102, 102, 0.741);
+  height: 100%;
+  height: 38px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  margin: auto 0;
+}
+.imageIcon {
+  transform: scale(73%);
+  width: 100%;
+  height: 100%;
+}
+.header .wrapper {
+  margin-left: 2rem;
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-shrink: 0;
+  padding-left: 0.75rem;
+  justify-content: center;
+  padding-right: 0.75rem;
+  /* padding-top: 0.2rem;
+  padding-bottom: 0.2rem; */
+  /* colors */
+  --bg-opacity: 0.5;
+  background-color: rgba(228, 228, 231, var(--bg-opacity));
+  --text-opacity: 1;
+  color: rgba(39, 39, 42, var(--text-opacity));
+  /* special stuff */
+  border-radius: 0.5rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.header .wrapper ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  min-width: 100%;
+  margin: 0 1rem;
+}
+.bookmark {
+  display: inline;
+  --bg-opacity: 1;
+  /* background-color: rgba(9, 142, 182, 0.589);
+  background-image: linear-gradient(210deg, rgba(9, 142, 182, var(--bg-opacity)), rgba(28, 236, 73, var(--bg-opacity))); */
+  background-color: rgba(255, 255, 255, var(--bg-opacity));
+  /* --border-opacity: 1;
+   border-color: rgba(161, 161, 170, var(--border-opacity));  */
+  border-radius: 0.5rem;
+  border-color: #818181;
+  border-bottom-width: 2px;
+  outline: white;
+  outline-offset: -2px;
+  outline-width: 2px;
+  /* outline-style: groove; */
+  /* cursor: pointer; */
+  line-height: 1.375;
+  cursor: pointer;
+  margin: auto;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  font-size: 1.15em;
+}
+.BackgroundColorDropMenu {
+  border-radius: 0.25rem;
+  left: 0;
+  top: 0;
+  width: fit-content;
+  z-index: 4;
+  border: 1px solid rgba(161, 161, 170, 1) !important;
+  cursor: auto;
+  color: #000;
+  background-color: #fff;
+  display: none;
+  position: absolute;
+  /* min-width: 160px; */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 100%;
+  font-family: Verdana, sans-serif;
+  border-radius: 0.25rem;
+}
+.NotePopupTitle > span,
+.NotePopupTitle > input {
+  position: flex;
+  right: 0;
+  top: 0;
+  font-family: Verdana, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  cursor: pointer;
+  border-radius: 0.25rem;
+}
+.NotePopupTitle > input {
+  justify-content: center;
+  margin-right: 1px;
+  width: 100%;
+  font-size: 1.2em;
+}
+.NotePopupTitle > span {
+  font-weight: bold;
+  padding: 10px;
+}
+.NotePopupTitle > input:focus-visible {
+  outline: inset blue 1px;
+}
+.main {
+  display: flex;
+  background-color: rgb(245, 150, 41);
+  min-height: 100vh;
+  margin: 0;
+}
+.main .wrapper {
+  align-items: flex-start;
+  width: 100vw;
+  margin-top: 40px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  overflow-x: auto;
+}
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  z-index: 4;
+}
+.Card {
+  flex-shrink: 0;
+  margin-bottom: 2.5rem;
+  padding: 0.75rem;
+  padding-bottom: 0.5rem;
+  width: 100%;
+  --bg-opacity: 1;
+  background-color: rgba(228, 228, 231, var(--bg-opacity));
+  --text-opacity: 1;
+  color: rgba(39, 39, 42, var(--text-opacity));
+  border-radius: 0.5rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transition: transform 200ms;
+}
+.CardTitle {
+  min-width: 40%;
+  padding: 0.25rem;
+  font-weight: 700;
+  --text-opacity: 1;
+  color: rgba(24, 24, 27, var(--text-opacity));
+  position: relative;
+  word-wrap: anywhere;
+  outline: none !important;
+}
+.LinksWrapper {
+  cursor: pointer;
+  width: 2em;
+  height: 2em;
+  padding: 0;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  text-align: center;
+  border-radius: 0.25rem;
+  border-color: rgba(161, 161, 170, var(--border-opacity));
+  border-bottom-width: 1px;
+  --bg-opacity: 1;
+  background-color: rgba(255, 255, 255, var(--bg-opacity));
+}
+.deleteCard,
+.deleteNote {
+  margin: auto;
+  height: 100%;
+  width: 100%;
+  line-height: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-top: 0px;
+}
+.deleteCard svg {
+  height: 0.8em !important;
+}
+.deleteNote svg {
+  height: 0.7em !important;
+}
+
+.Note {
+  position: relative;
+  --border-opacity: 1;
+  border-color: rgba(161, 161, 170, var(--border-opacity));
+  border-radius: 0.25rem;
+  border-bottom-width: 1px;
+  cursor: auto;
+  line-height: 1.375;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.NoteTextarea {
+  min-width: 40%;
+  word-wrap: anywhere;
+  outline: none !important;
+  font-size: 1.2em;
+}
+.Note.NoteMark {
+  border-left: 0.6em solid rgb(44, 185, 185) inset;
+}
+.p-3 {
+  padding: 0.75rem;
+}
+.Note > span > div > p {
+  outline: none;
+}
+
+/* dropdownMenu */
+.NoteDropdownMenuOverlay {
+  background-color: transparent !important;
+}
+.dropdownMenu > .circle {
+  width: 3px;
+  height: 3px;
+  margin: 3px;
+  background: rgb(0, 0, 0);
+  border-radius: 50%;
+  display: block;
+}
+.dropdownMenuWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.dropdownMenuWrapper > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.dropdownMenuWrapper > div:hover,
+.dropdownMenuWrapper > div:focus {
+  outline: none;
+}
+.dropdownMenu {
+  border-radius: 0.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  flex-direction: column;
+  position: relative;
+  transition: all 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.dropdownMenu > .circle:nth-child(4) {
+  position: absolute;
+  opacity: 0;
+  margin-left: -15px;
+}
+.dropdownMenu > .circle:nth-child(5) {
+  position: absolute;
+  opacity: 0;
+  margin-right: -15px;
+}
+.dropdownMenuClicked {
+  transform: rotate(45deg);
+  opacity: 1;
+}
+.dropdownMenuClicked > .circle {
+  opacity: 1 !important;
+}
+
+/* END OF dropdownMenu SECTION */
+
+.NoteDropMenu {
+  border-radius: 0.25rem;
+  left: 0;
+  top: 0;
+  width: 210px;
+  z-index: 4;
+  border: 1px solid rgba(161, 161, 170, 1) !important;
+  cursor: auto;
+  color: #000;
+  background-color: #fff;
+  display: none;
+  position: absolute;
+  /* min-width: 160px; */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 100%;
+  font-family: Verdana, sans-serif;
+  border-radius: 0.25rem;
+}
+.NoteDropMenu > span {
+  background-color: transparent !important;
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-family: Verdana, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+.border-radius-1 {
+  border-radius: 0.25rem;
+}
+.button {
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 16px;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  background-color: inherit;
+  text-align: center;
+  cursor: inherit;
+  white-space: break-spaces;
+  background-color: #fff;
+}
+.button:hover {
+  background-color: #a1a1aa;
+}
+.button > span:hover,
+.button > div {
+  cursor: pointer;
+}
+.NoteBlockMenuWrapper > a {
+  border-radius: 0.25rem;
+  /* useless */
+  /* width: 100%;
+  display: block;
+  padding: 8px 16px;
+  text-align: left;
+  border: none;
+  white-space: normal;
+  float: none;
+  outline: 0; */
+}
+.DropMenuOverlay {
+  position: absolute;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+footer a {
+  display: block;
+  padding: 0.25rem;
+  --text-opacity: 1;
+  color: rgba(113, 113, 122, var(--text-opacity));
+}
+footer a:hover {
+  --text-opacity: 1;
+  color: rgba(63, 63, 70, var(--text-opacity));
+}
+.textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border-top-width: 1px;
+  border-left-width: 1px;
+  --border-opacity: 1;
+  border-color: rgba(212, 212, 216, var(--border-opacity));
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+}
+.addNewForm {
+  flex-shrink: 0;
+  /* min-width: 150px; */
+
+  --text-opacity: 1;
+  color: rgba(39, 39, 42, var(--text-opacity));
+}
+.addNew {
+  min-width: 137px;
+  width: 100%;
+  padding: 0.5rem;
+  padding-right: 0em;
+  --bg-opacity: 0.4;
+  background-color: rgba(255, 255, 255, var(--bg-opacity));
+  --placeholder-opacity: 1;
+  color: rgba(255, 255, 255, var(--placeholder-opacity));
+  font-weight: 700;
+  border-radius: 0.5rem;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+.addNoteBtn {
+  --border-opacity: 1;
+  /* border-color: rgba(82, 82, 91, var(--border-opacity)); */
+  border-radius: 0.25rem;
+  /* box-shadow: 0px 1px 0 rgba(0, 0, 0, 0.35) ; */
+  font-weight: 600;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  --text-opacity: 1;
+  color: rgba(255, 255, 255, var(--text-opacity));
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.35);
+  --bg-opacity: 1;
+  background-color: rgba(16, 185, 129, var(--bg-opacity));
+  text-decoration: none;
+}
+.addNoteBtn:hover {
+  --bg-opacity: 1;
+  background-color: rgba(52, 211, 153, var(--bg-opacity));
+}
+.addNoteBtn:active {
+  border-right-width: 0px;
+  border-top-width: 0px;
+  border-left-width: 0px;
+  /* box-shadow: 0px 1px 0 rgba(228, 228, 231, 1) inset; */
+  top: 1px;
+
+  /* border:1px inset; */
+}
+.addNew:focus {
+  --bg-opacity: 1;
+  --placeholder-opacity: 1;
+  color: rgba(82, 82, 91, var(--placeholder-opacity));
+  /* box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); */
+}
+
+.addNoteBtn {
+  margin: 5px 0;
+  transform-style: preserve-3d;
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1);
+  --border-opacity: 1;
+  /* border-color: rgba(82, 82, 91, var(--border-opacity)); */
+  border-radius: 0.25rem;
+  /* box-shadow: 0px 1px 0 rgba(0, 0, 0, 0.35) ; */
+  font-weight: 600;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  --text-opacity: 1;
+  color: rgba(255, 255, 255, var(--text-opacity));
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.35);
+  --bg-opacity: 1;
+  background-color: rgba(16, 185, 129, var(--bg-opacity));
+  text-decoration: none;
+}
+.addNoteBtn::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 80%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgb(76, 211, 166);
+  border-radius: inherit;
+  transform: translate3d(0, 0.75em, -1em);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
+    box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+.addNoteBtn:hover {
+  background: rgb(29, 199, 142);
+}
+.addNoteBtn:active {
+  background: rgb(76, 211, 166);
+  /* transform: translate(0em, 0.25em); */
+}
+/* .addNoteBtn:active::before {
+  transform: translate3d(0, 0.5em, -1em);
+} */
+
+#secondPage {
+  height: 100vh;
+
+  background-image: radial-gradient(rgb(23, 23, 160), rgb(130, 213, 213));
+  /* background-color: rgb(130, 213, 213); */
+}
+.wrapinfocard {
+  margin: auto;
+  position: relative;
+}
+.aboutMeInfoWrapper {
+  z-index: 2;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  height: 400px;
+  background-color: #a1a1aa;
+  border-radius: 0.75rem;
+  transform: rotate(5deg);
+}
+.wrapinfocard div:nth-child(2) {
+  position: static !important;
+}
+.wrapinfocard div:nth-child(2) div {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+}
+.wrapinfocard div:nth-child(3) {
+  position: static !important;
+}
+.wrapinfocard div:nth-child(3) div {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+}
+.aboutMeInfoBackcard {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background: rgb(181, 181, 181);
+  border-radius: 0.75rem;
+  /* transform: rotate(-5deg); */
+}
+.aboutMeInfoBackcard2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background: rgb(218, 218, 218);
+  border-radius: 0.75rem;
+  /* transform: rotate(-5deg); */
+}
+.aboutMeInfo {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.ov-hid {
+  overflow: hidden;
+}
+.mob-hide {
+  display: none !important;
+}
+.pc-hidden {
+  display: flex !important;
+}
+
+@media (min-width: 455px) {
+  /* MY  OWN elements */
+  /* colors{display:flex; flex-direction: row; ; margin:0; padding:0; border:0; justify-content: space-between;}
+  red{display: flex ;background-color: rgb(232, 32, 32);align-items: center; margin: auto 2px;border: 1px solid black; content: "&#9632;"; width: 15px; height: 15px; cursor: pointer;}
+  green{display: flex ;background-color: rgb(55, 179, 51);align-items: center; margin: auto 2px;border: 1px solid black; content: "&#9632;"; width: 15px; height: 15px; cursor: pointer;}
+  gray{display: flex ;background-color: rgb(88, 88, 88);align-items: center; margin: auto 2px;border: 1px solid black; content: "&#9632;"; width: 15px; height: 15px; cursor: pointer;}
+  blue{display: flex ;background-color: rgb(14, 67, 167);align-items: center; margin: auto 2px;border: 1px solid black; content: "&#9632;"; width: 15px; height: 15px; cursor: pointer;}
+  white{display: flex ;background-color: rgb(228, 228, 231);align-items: center; margin: auto 2px;border: 1px solid black; content: "&#9632;"; width: 15px; height: 15px; cursor: pointer;} */
+
+  .Card {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 0;
+    width: 20rem;
+  }
+  .main {
+    background-image: linear-gradient(
+      100deg,
+      rgb(245, 150, 41),
+      rgb(74, 232, 217)
+    );
+  }
+  .main .wrapper {
+    display: flex;
+  }
+  .mob-hide {
+    display: flex !important;
+  }
+  .pc-hide {
+    display: none !important;
+  }
+
+  /* hamburger menu  */
+
+  /* hamburger menu  */
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    /**
+     * in-content-page-{color, background} for dark theme.
+     *
+     * TODO(emilio): Make this just `color-scheme: dark` once color-scheme ships,
+     * (or `color-scheme: light dark` outside the media query).
+     */
+    /* background: rgb(28,27,34);
+    color: rgb(251,251,254); */
+  }
 }
