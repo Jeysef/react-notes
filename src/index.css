@@ -25,6 +25,7 @@ Use a more readable tab size (opinionated).
   tab-size: 4;
   --headerHeight: 40px;
   --buttongreen: rgb(16, 185, 129);
+  --cardbgcolorwhenDND: #282c34;
 }
 
 /**
@@ -800,6 +801,7 @@ body {
   height: 200vh;
 }
 .Card {
+  position: relative;
   flex-shrink: 0;
   margin-bottom: 2.5rem;
   padding: 0.75rem;
@@ -813,6 +815,7 @@ body {
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
     0 10px 10px -5px rgba(0, 0, 0, 0.04);
   transition: transform 200ms;
+  overflow: hidden;
 }
 .CardTitle {
   min-width: 40%;
@@ -823,6 +826,16 @@ body {
   position: relative;
   word-wrap: anywhere;
   outline: none !important;
+}
+.blacker {
+  scale: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--cardbgcolorwhenDND);
+  z-index: 2;
+  left: 0;
+  top: 0;
 }
 .LinksWrapper {
   cursor: pointer;
@@ -878,7 +891,7 @@ body {
   font-size: 1.2em;
 }
 .Note.NoteMark {
-  border-left: 0.6em solid rgb(44, 185, 185) inset;
+  border-left: 0.6em solid rgb(44, 185, 185);
 }
 .p-3 {
   padding: 0.75rem;
@@ -1280,6 +1293,15 @@ footer a:hover {
 }
 
 /* ?login */
+/* DragNDrop */
+
+.dndmoving,
+.dndmoving * {
+  background-color: var(--cardbgcolorwhenDND);
+  background-image: none;
+}
+
+/* ?DragNDrop */
 
 @media (min-width: 455px) {
   /* MY  OWN elements */

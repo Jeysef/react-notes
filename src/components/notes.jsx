@@ -12,8 +12,8 @@ const Notes = ({ contentNotes, deleteNote, cardId, noteMarkerer }) => {
 
   return contentNotes.map((note) => (
     <li
-      className={`Note p-3 flex-between bg_white ${
-        contentNotes[note.id]["mark"] ? " NoteMark" : ""
+    draggable = "false"      className={`Note p-3 flex-between bg_white ${
+        note["mark"] ? " NoteMark" : ""
       }`}
       key={note.id}
       onDoubleClick={() => {
