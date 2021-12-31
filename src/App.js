@@ -215,7 +215,7 @@ const MainApp = () => {
       <main id="main" class="main">
         <div id="content" className="wrapper">
           <div
-            id="overlay"
+            id="overlay" 
             className=""
             // onDragEnter={
             //   card.current &&
