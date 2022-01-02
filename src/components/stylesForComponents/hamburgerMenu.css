@@ -3,6 +3,7 @@
   width: 100%;
   height: 100%;
   opacity: 0;
+  z-index: 1;
 }
 #menu__toggle:checked + .menu__btn > span {
   transform: rotate(45deg);
@@ -17,6 +18,7 @@
 }
 #menu__toggle:checked ~ .menu__box {
   left: 0 !important;
+  transform: translateX(0);
 }
 .menu__btn {
   position: absolute;
@@ -63,6 +65,7 @@
   background-color: #eceff1;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
   transition-duration: 0.25s;
+  transform: translateX(-50%);
 }
 .menu__box li {
   position: relative;

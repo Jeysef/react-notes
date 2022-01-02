@@ -11,20 +11,26 @@ const HeaderApp = () => {
 
   */
   const toogle = () => {
+    if (!document.getElementById("menu-window-toogle").checked) {
+      document.getElementsByClassName("menu-window-center")[0].style.transform =
+        "scale(0)";
+        document.getElementById("overlay").style.transform = "scale(0)";
+
+    } else {
+      document.getElementsByClassName("menu-window-center")[0].style.transform =
+      "scale(1)";
+      document.getElementById("overlay").style.transform = "scale(1)";
+    }
     document.getElementById("menu-window-toogle").checked =
       !document.getElementById("menu-window-toogle").checked;
-    if (document.getElementById("menu-window-toogle").checked) {
-      document.getElementsByClassName("menu-window-center")[0].style.scale = 0;
-    } else {
-      document.getElementsByClassName("menu-window-center")[0].style.scale = 1;
-    }
   };
+  
 
   return (
     <>
       <div className="logo">
         <div>
-          <img className="imageIcon" src="../favicon.ico" alt="Icon" />
+          <img className="imageIcon" src="./favicon.ico" alt="Icon" />
         </div>
       </div>
       <div className="wrapper mob-hide">

@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from "react";
 // import ReactDOM from "react-dom";
 import "./index.css";
-import Cards from "./components/cards";
+import Cards from "./components/Cards";
 
 import HeaderApp from "./HeaderApp";
 import AboutMeApp from "./AboutMeApp";
@@ -105,7 +105,7 @@ const MainApp = () => {
       id = 0;
     }
     // this will update content
-    const becontent = JSON.parse(JSON.stringify(content));    
+    const becontent = JSON.parse(JSON.stringify(content));
     console.log(becontent["content"], "fdf");
     becontent["content"].push({
       id: id,
@@ -153,7 +153,7 @@ const MainApp = () => {
         i--;
       }
     }
-    
+
     setContent(becontent);
   };
   const deleteCard = async (cardId) => {
@@ -196,13 +196,12 @@ const MainApp = () => {
 
   // mark Note
   const markNote = (cardId, noteId) => {
-    const becontent = JSON.parse(JSON.stringify(content));    
+    const becontent = JSON.parse(JSON.stringify(content));
     becontent["content"][cardId]["notes"][noteId]["mark"] =
       !becontent["content"][cardId]["notes"][noteId]["mark"];
-      console.log(content, becontent);
+    console.log(content, becontent);
 
     setContent(becontent);
-
   };
 
   const card = useRef();
@@ -215,7 +214,7 @@ const MainApp = () => {
       <main id="main" class="main">
         <div id="content" className="wrapper">
           <div
-            id="overlay" 
+            id="overlay"
             className=""
             // onDragEnter={
             //   card.current &&

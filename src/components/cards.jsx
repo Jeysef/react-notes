@@ -48,7 +48,7 @@ const Cards = ({
             setDragging(true);
             document.getElementsByClassName("blacker")[
               dragItem.current
-            ].style.scale = 1;
+            ].style.transform = "scale(1)";
           }, 0);
         };
         const handleDragEnter = (e, itemIdDND) => {
@@ -72,7 +72,7 @@ const Cards = ({
           setDragging(false);
           document.getElementsByClassName("blacker")[
             dragItem.current
-          ].style.scale = 0;
+          ].style.transform = "scale(0)";
           dragItem.current = null;
           dragItemNode.current.removeEventListener("dragend", handleDragEnd);
 
@@ -85,11 +85,11 @@ const Cards = ({
           ) {
             document.getElementsByClassName("blacker")[
               dragItem.current
-            ].style.scale = 1;
+            ].style.transform = "scale(1)";
           } else {
             document.getElementsByClassName("blacker")[
               dragItem.current
-            ].style.scale = 0;
+            ].style.transform = "scale(0)";
           }
           return "Card";
         };
@@ -103,14 +103,17 @@ const Cards = ({
     newNoteHandler(noteTitle.value, cardId);
     setnoteTitle("");
   };
-
-  const handleDeleteCard = (cardId) => {
+  const delay = ms => new Promise(res => setTimeout(res, ms));
+  const handleDeleteCard = async (cardId,carded) => {
+    document.getElementsByClassName("Card")[carded].style.transform = "scale(0.5)";
+    document.getElementsByClassName("Card")[carded].style.opacity = "0";
+    await delay(250);
     deleteCard(cardId);
   };
 
   return content["content"].map((card, carded) => (
     <section
-      className={"Card "}
+      className="Card "
       key={card.id}
       draggable = "true"
       contentEditable="false"
@@ -133,7 +136,7 @@ const Cards = ({
           <button
             className="deleteCard"
             onClick={() => {
-              handleDeleteCard(card.id);
+              handleDeleteCard(card.id, carded);
             }}
           >
             <FaTimes />

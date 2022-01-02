@@ -15,11 +15,12 @@ const LoginForm = () => {
     document.getElementById("menu-window-toogle").checked =
       !document.getElementById("menu-window-toogle").checked;
     if (document.getElementById("menu-window-toogle").checked) {
-      document.getElementsByClassName("menu-window-center")[0].style.scale = 0;
-      document.getElementById("overlay").style.scale = 0;
+      console.log(document.getElementsByClassName("menu-window-center")[0].style)
+      document.getElementsByClassName("menu-window-center")[0].style.transform = "scale(0)";
+      document.getElementById("overlay").style.transform = "scale(0)";
     } else {
-      document.getElementsByClassName("menu-window-center")[0].style.scale = 1;
-      document.getElementById("overlay").style.scale = 1;
+      document.getElementsByClassName("menu-window-center")[0].style.transform = "scale(1)";
+      document.getElementById("overlay").style.transform = "scale(1)";
     }
   };
 
@@ -55,7 +56,6 @@ const LoginForm = () => {
                 <input
                   type="text"
                   name="login-username"
-                  id=""
                   onChange={(e) => {
                     setUsername(e.target.value);
                   }}
@@ -64,7 +64,6 @@ const LoginForm = () => {
                 <input
                   type="password"
                   name="login-password"
-                  id=""
                   onChange={(e) => {
                     setPassword(e.target.value);
                   }}
@@ -78,7 +77,7 @@ const LoginForm = () => {
       <input
         id="menu-window-toogle"
         type="checkbox"
-        style={{ scale: "0", position: "absolute" }}
+        style={{ transform: "scale(0)", position: "absolute" }}
       />
     </>
   );
