@@ -2,7 +2,7 @@ import React from "react";
 
 const Menulist = () => {
   const toogle = (event) => {
-    if (event.target.tagName != "INPUT")
+    if (event.target.tagName !== "INPUT")
       document.getElementById("menu__toggle").checked =
         !document.getElementById("menu__toggle").checked;
   };

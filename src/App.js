@@ -93,6 +93,9 @@ const MainApp = () => {
   * FUNCTIONS
 
   */
+  const copyOf = (Data) => {
+    return JSON.parse(JSON.stringify(Data));
+  };
 
   const AddNewCardHandler = (titleName) => {
     if (content["content"].length !== 0) {
@@ -105,7 +108,7 @@ const MainApp = () => {
       id = 0;
     }
     // this will update content
-    const becontent = JSON.parse(JSON.stringify(content));
+    const becontent = copyOf(content);
     console.log(becontent["content"], "fdf");
     becontent["content"].push({
       id: id,
@@ -117,7 +120,6 @@ const MainApp = () => {
   };
   const AddNewNoteHandler = (contentValue, cardId) => {
     let becontent = content;
-    // console.log("length", becontent[cardId]["notes"].length);
     if (becontent["content"][cardId]["notes"].length !== 0) {
       var arrOfIds = becontent["content"][cardId]["notes"].map((c) => c.id);
       var id =
@@ -127,12 +129,6 @@ const MainApp = () => {
     } else {
       id = 0;
     }
-    // var arrOfIds = becontent[cardId]["notes"].map((c) => c.id);
-    // var id =
-    //   arrOfIds.reduce(function (a, b) {
-    //     return Math.max(a, b);
-    //   }, 0) + 1;
-
     becontent["content"][cardId]["notes"].push({
       content: contentValue,
       id: id,
@@ -142,11 +138,7 @@ const MainApp = () => {
     setContent(becontent);
   };
   const deleteNote = (cardId, NoteId) => {
-    const becontent = JSON.parse(JSON.stringify(content));
-
-    // becontent["content"][cardId]["notes"].filter(
-    //   (note) => note.id !== NoteId
-    // );
+    const becontent = copyOf(content);
     for (var i = 0; i < becontent["content"][cardId]["notes"].length; i++) {
       if (becontent["content"][cardId]["notes"][i]["id"] === NoteId) {
         becontent["content"][cardId]["notes"].splice(i, 1);
@@ -160,43 +152,19 @@ const MainApp = () => {
     // await fetch(`https://json.extendsclass.com/bin/138ae146c385`, {
     //   method: "DELETE",
     // });
-    const becontent = JSON.parse(JSON.stringify(content));
+    const becontent = copyOf(content);
     for (var i = 0; i < becontent["content"].length; i++) {
       if (becontent["content"][i]["id"] === cardId) {
         becontent["content"].splice(i, 1);
         i--;
       }
     }
-    // becontent["content"].filter((card) => card.id !== cardId);
     console.log(content, becontent);
     setContent(becontent);
   };
-  // dragNDropApp = () => {
-  //   const [data, setData] = useState();
-  //   useEffect(() => {
-  //     if (localStorage.getItem("List")) {
-  //       console.log(localStorage.getItem("List"));
-  //       setData(JSON.parse(localStorage.getItem("List")));
-  //     } else {
-  //       setData(this.state.content);
-  //     }
-  //   }, [setData]);
-  // };
-
-  // const pluginWrapper = () => {
-  //   require("./statics/fullpage.scrollHorizontally.min");
-  // };
-  // return (
-  //   <ReactFullpage
-  //     // pluginWrapper={pluginWrapper}
-  //     //fullpage options
-  //     licenseKey={"YOUR_KEY_HERE"}
-  //     scrollingSpeed={1000} /* Options here */
-  //     render={({ state, fullpageApi }) => {
-
   // mark Note
   const markNote = (cardId, noteId) => {
-    const becontent = JSON.parse(JSON.stringify(content));
+    const becontent = copyOf(content);
     becontent["content"][cardId]["notes"][noteId]["mark"] =
       !becontent["content"][cardId]["notes"][noteId]["mark"];
     console.log(content, becontent);

@@ -22,77 +22,80 @@ const Cards = ({
 
   const [noteTitle, setnoteTitle] = useState({ value: "", id: 0 });
   // drag'n drop
-        const [dragging, setDragging] = useState(false);
+  const [dragging, setDragging] = useState(false);
 
-        const setDataDND = (content) => {
-          setContent(content);
-        };
+  const setDataDND = (content) => {
+    setContent(content);
+  };
 
-        useEffect(() => {
-          setDataDND(content);
-        }, [setDataDND, content]);
+  useEffect(() => {
+    setDataDND(content);
+  }, [setDataDND, content]);
 
-        const dragItem = useRef();
-        const dragItemNode = useRef();
+  const dragItem = useRef();
+  const dragItemNode = useRef();
 
-        const handletDragStart = (e, itemIDND) => {
-          e.dataTransfer.dropEffect = "move";
-          // e.target.style.cursor = 'move';
-          console.log("Starting to drag", itemIDND);
+  const handletDragStart = (e, itemIDND) => {
+    e.dataTransfer.dropEffect = "move";
+    // e.target.style.cursor = 'move';
+    console.log("Starting to drag", itemIDND);
 
-          dragItemNode.current = e.target;
-          dragItemNode.current.addEventListener("dragend", handleDragEnd);
-          dragItem.current = itemIDND;
+    dragItemNode.current = e.target;
+    dragItemNode.current.addEventListener("dragend", handleDragEnd);
+    dragItem.current = itemIDND;
 
-          setTimeout(() => {
-            setDragging(true);
-            document.getElementsByClassName("blacker")[
-              dragItem.current
-            ].style.transform = "scale(1)";
-          }, 0);
-        };
-        const handleDragEnter = (e, itemIdDND) => {
-          console.log("Entering a drag target", itemIdDND);
-          if (dragItemNode.current !== e.target) {
-            console.log("Target is NOT the same as dragged item");
-            setDataDND((oldList) => {
-              let newdataDND = JSON.parse(JSON.stringify(oldList));
-              newdataDND["content"].splice(
-                itemIdDND,
-                0,
-                newdataDND["content"].splice(dragItem.current, 1)[0]
-              );
-              dragItem.current = itemIdDND;
-              localStorage.setItem("List", JSON.stringify(newdataDND));
-              return newdataDND;
-            });
-          }
-        };
-        const handleDragEnd = (e) => {
-          setDragging(false);
-          document.getElementsByClassName("blacker")[
-            dragItem.current
-          ].style.transform = "scale(0)";
-          dragItem.current = null;
-          dragItemNode.current.removeEventListener("dragend", handleDragEnd);
+    setTimeout(() => {
+      setDragging(true);
+      document.getElementsByClassName("blacker")[
+        dragItem.current
+      ].style.transform = "scale(1)";
+    }, 0);
+  };
+  const copyOf = (Data) => {
+    return JSON.parse(JSON.stringify(Data));
+  };
+  const handleDragEnter = (e, itemIdDND) => {
+    console.log("Entering a drag target", itemIdDND);
+    if (dragItemNode.current !== e.target) {
+      console.log("Target is NOT the same as dragged item");
+      setDataDND((oldData) => {
+        let newdataDND = copyOf(oldData);
+        newdataDND["content"].splice(
+          itemIdDND,
+          0,
+          newdataDND["content"].splice(dragItem.current, 1)[0]
+        );
+        dragItem.current = itemIdDND;
+        localStorage.setItem("List", JSON.stringify(newdataDND));
+        return newdataDND;
+      });
+    }
+  };
+  const handleDragEnd = (e) => {
+    setDragging(false);
+    document.getElementsByClassName("blacker")[
+      dragItem.current
+    ].style.transform = "scale(0)";
+    dragItem.current = null;
+    dragItemNode.current.removeEventListener("dragend", handleDragEnd);
 
-          dragItemNode.current = null;
-        };
-        const getStyles = (itemIdDND, cardId) => {
-          if (
-            //   dragItem.current.grpI === item.grpI &&
-            dragItem.current === itemIdDND
-          ) {
-            document.getElementsByClassName("blacker")[
-              dragItem.current
-            ].style.transform = "scale(1)";
-          } else {
-            document.getElementsByClassName("blacker")[
-              dragItem.current
-            ].style.transform = "scale(0)";
-          }
-          return "Card";
-        };
+    dragItemNode.current = null;
+  };
+  const getStyles = (itemIdDND, cardId) => {
+    if (
+      //   dragItem.current.grpI === item.grpI &&
+      dragItem.current === itemIdDND
+    ) {
+      document.getElementsByClassName("blacker")[
+        dragItem.current
+      ].style.transform = "scale(1)";
+    } else {
+      document.getElementsByClassName("blacker")[
+        dragItem.current
+      ].style.transform = "scale(0)";
+    }
+    return "Card";
+  };
 
   const handleAddNewNote = (e, cardId) => {
     e.preventDefault();
@@ -103,9 +106,10 @@ const Cards = ({
     newNoteHandler(noteTitle.value, cardId);
     setnoteTitle("");
   };
-  const delay = ms => new Promise(res => setTimeout(res, ms));
-  const handleDeleteCard = async (cardId,carded) => {
-    document.getElementsByClassName("Card")[carded].style.transform = "scale(0.5)";
+  const delay = (ms) => new Promise((res) => setTimeout(res, ms));
+  const handleDeleteCard = async (cardId, carded) => {
+    document.getElementsByClassName("Card")[carded].style.transform =
+      "scale(0.5)";
     document.getElementsByClassName("Card")[carded].style.opacity = "0";
     await delay(250);
     deleteCard(cardId);
@@ -115,7 +119,7 @@ const Cards = ({
     <section
       className="Card "
       key={card.id}
-      draggable = "true"
+      draggable="true"
       contentEditable="false"
       onDragStart={(e) => handletDragStart(e, carded)}
       onDragEnter={
@@ -151,8 +155,7 @@ const Cards = ({
           noteMarkerer={noteMarkerer}
         />
       </ul>
-      <footer
-      draggable = "false">
+      <footer draggable="false">
         <form onSubmit={(e) => handleAddNewNote(e, carded)}>
           <textarea
             value={noteTitle.id === card.id ? noteTitle.value : ""}
