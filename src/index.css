@@ -1201,20 +1201,20 @@ footer a:hover {
   border-radius: 0.75rem;
   transform: rotate(5deg);
 }
-.wrapinfocard div:nth-child(2) {
+.wrapinfocard > div:nth-child(2) {
   position: static !important;
 }
-.wrapinfocard div:nth-child(2) div {
+.wrapinfocard > div:nth-child(2) div {
   position: absolute !important;
   top: 0 !important;
   left: 0 !important;
   right: 0 !important;
   bottom: 0 !important;
 }
-.wrapinfocard div:nth-child(3) {
+.wrapinfocard > div:nth-child(3) {
   position: static !important;
 }
-.wrapinfocard div:nth-child(3) div {
+.wrapinfocard > div:nth-child(3) div {
   position: absolute !important;
   top: 0 !important;
   left: 0 !important;
@@ -1249,7 +1249,43 @@ footer a:hover {
   justify-content: center;
   text-align: center;
 }
+
+.aboutMeInfo .AMwrapper {
+  position: relative;
+}
+.AMwrapper .AMtitle {
+
+}
+.AMwrapper .AMinfo {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 120%;
+  right: 5%;
+  background-color: #fff;
+  padding: .5em;
+  width: max-content;
+  transform: translateY(-50%);
+  border-radius: 0.25rem
+}
+.AMwrapper .AMinfo:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-width: 10px;
+      border-style: solid;
+      border-color: transparent #FFFFFF transparent transparent;
+      top: 11px;
+      left: -20px;
+}
+.aboutMeInfo .AMwrapper:hover .AMinfo {
+  display: block;
+}
 .ov-hid {
+  overflow: hidden;
+}
+.mob-ov-hid {
   overflow: hidden;
 }
 .mob-hide {
@@ -1348,6 +1384,9 @@ footer a:hover {
   }
   .mob-hide {
     display: flex !important;
+  }
+  .mob-ov-hid {
+    overflow: visible;
   }
   .pc-hide {
     display: none !important;

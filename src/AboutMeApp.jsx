@@ -15,14 +15,19 @@ const AboutMeApp = () => {
     // );
     return (
       <div className="wrapinfocard">
-        <div className="aboutMeInfoWrapper ov-hid">
-          <div className="aboutMeInfo ov-hid">
+        <div className="aboutMeInfoWrapper mob-ov-hid">
+          <div className="aboutMeInfo mob-ov-hid">
             <ul>
               <li>
                 <b>About me</b>
               </li>
-              <li>Student</li>
-              <li>programer</li>
+              <li className="AMwrapper">
+                <div className="AMtitle">Student</div>
+                <div className="AMinfo">Studying in SPŠ Electrotechnical in Olomouc in ČR</div>
+
+              </li>
+              <li><div className="AMtitle">Programmer</div>
+                <div className="AMinfo">Programing &amp; coding for almost 3 years</div></li>
             </ul>
           </div>
         </div>
