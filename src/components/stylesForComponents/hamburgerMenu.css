@@ -18,6 +18,7 @@
 }
 #menu__toggle:checked ~ .menu__box {
   left: 0 !important;
+  /* transition: left 0.25ms ease 0ms, transform 0ms linear 0.25ms; */
   transform: translateX(0);
 }
 .menu__btn {
@@ -64,8 +65,8 @@
   list-style: none;
   background-color: #eceff1;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
-  transition-duration: 0.25s;
-  transform: translateX(-50%);
+  /* transition: left 0.25s ease 0ms, transform 0ms linear 0ms; */
+  transform: translateX(-100%);
 }
 .menu__box li {
   position: relative;
@@ -88,4 +89,10 @@
 }
 .menu__item:hover {
   background-color: #cfd8dc;
+}
+.transition_opening {
+  transition: left 0.25s ease 0.1ms, transform 0ms linear 0s;
+}
+.transition_closing {
+  transition: left 0.25s ease 0.1ms, transform 0ms linear 0.25s;
 }

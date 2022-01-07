@@ -26,7 +26,8 @@ const AboutMeApp = () => {
                 <div className="AMinfo">Studying in SPŠ Electrotechnical in Olomouc in ČR</div>
 
               </li>
-              <li><div className="AMtitle">Programmer</div>
+              <li className="AMwrapper">
+                <div className="AMtitle">Programmer</div>
                 <div className="AMinfo">Programing &amp; coding for almost 3 years</div></li>
             </ul>
           </div>
