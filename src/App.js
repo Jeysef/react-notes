@@ -191,6 +191,7 @@ const MainApp = () => {
             //     : null
             // }
           ></div>
+            <NewCardForm NewCardHandler={AddNewCardHandler} />
           <Cards
             ref={card}
             content={content}
@@ -200,7 +201,6 @@ const MainApp = () => {
             noteMarkerer={markNote}
             setContent={setContent}
           />
-          <NewCardForm NewCardHandler={AddNewCardHandler} />
         </div>
       </main>
       <div id="secondPage" class="main">

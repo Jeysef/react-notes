@@ -31,8 +31,8 @@ Use a more readable tab size (opinionated).
   --card-bg-overlay: #282c34;
   --main-bg-white: #e4e4e4;
   --main-bg-main: var(--main-orange);
-  --main-bg-second:var(--main-gray3);
-  --main-orange: #f59629;
+  --main-bg-second:var(--main-gray2);
+  --main-orange: #C48237;
   --main-orange2: #ff9900;
   --main-white: #ffffff;
   --main-gray1: #cccccc;
@@ -676,8 +676,8 @@ body {
 }
 .header .wrapper {
   margin-left: 2rem;
-  margin-top: 0.25em;
-  margin-bottom: 0.25em;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -726,7 +726,7 @@ body {
   margin: auto;
   padding-left: 0.75rem;
   padding-right: 0.75rem;
-  font-size: 1.15em;
+  font-size: 1.15rem;
 }
 .BackgroundColorDropMenu {
   border-radius: 0.25rem;
@@ -888,10 +888,10 @@ body {
   padding-top: 0px;
 }
 .deleteCard svg {
-  height: 0.8em !important;
+  height: 0.8rem !important;
 }
 .deleteNote svg {
-  height: 0.7em !important;
+  height: 0.7rem !important;
 }
 
 .Note {
@@ -912,7 +912,7 @@ body {
   font-size: 1.2em;
 }
 .Note.NoteMark {
-  border-left: 0.6em solid rgb(44, 185, 185);
+  border-left: 0.6rem solid rgb(44, 185, 185);
 }
 .p-3 {
   padding: 0.75rem;
@@ -1081,11 +1081,14 @@ footer a:hover {
   /* min-width: 150px; */
   color: rgba(39, 39, 42);
 }
+.addNewCard {
+  margin-bottom: 2.5rem;
+}
 .addNew {
   min-width: 137px;
   width: 100%;
   padding: 0.5rem;
-  padding-right: 0em;
+  padding-right: 0rem;
   --bg-opacity: 0.4;
   background-color: rgba(255, 255, 255, var(--bg-opacity));
   --placeholder-opacity: 1;
@@ -1163,7 +1166,7 @@ footer a:hover {
   bottom: 0;
   background: rgb(76, 211, 166);
   border-radius: inherit;
-  transform: translate3d(0, 0.75em, -1em);
+  transform: translate3d(0, 0.75rem, -1rem);
   transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
     box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
 }
@@ -1172,11 +1175,8 @@ footer a:hover {
 }
 .addNoteBtn:active {
   background: var(--main-button-green-active);
-  /* transform: translate(0em, 0.25em); */
 }
-/* .addNoteBtn:active::before {
-  transform: translate3d(0, 0.5em, -1em);
-} */
+
 
 #secondPage {
   height: 100vh;
@@ -1257,28 +1257,22 @@ footer a:hover {
 
 }
 .AMwrapper .AMinfo {
-  display: none;
-  position: absolute;
-  top: 50%;
-  left: 120%;
-  right: 5%;
-  background-color: #fff;
-  padding: .5em;
-  width: max-content;
-  transform: translateY(-50%);
-  border-radius: 0.25rem
+  /* display: none; */
+  /* position: absolute; */
+  /* top: 50%; */
+  /* left: 120%; */
+  /* right: 5%; */
+  /* background-color: #fff; */
+  /* padding: .5rem; */
+  /* width: max-content; */
+  /* transform: translateY(-50%); */
+  border-radius: 0.25rem;
+  /* word-wrap: anywhere; */
+  width: 100%;
+  font-size: 0.8em;
 }
-.AMwrapper .AMinfo:after {
-      content: "";
-      position: absolute;
-      width: 0;
-      height: 0;
-      border-width: 10px;
-      border-style: solid;
-      border-color: transparent #FFFFFF transparent transparent;
-      top: 11px;
-      left: -20px;
-}
+/* .AMwrapper .AMinfo:after {
+} */
 .aboutMeInfo .AMwrapper:hover .AMinfo {
   display: block;
 }
@@ -1313,7 +1307,7 @@ footer a:hover {
   justify-content: center;
   height: 100%;
   align-content: center;
-  border-radius: 0.25em;
+  border-radius: 0.25rem;
   border-top-left-radius: 0;
   border-bottom-right-radius: 0;
 }
@@ -1327,7 +1321,7 @@ footer a:hover {
   transform: translate(-50%, -50%) scale(1);
   background-color: var(--main-white);
   overflow: hidden;
-  border-radius: 0.25em;
+  border-radius: 0.25rem;
 }
 #menu-window-toogle:checked ~ .menu-window-center {
   transform: scale(0) !important;
@@ -1391,7 +1385,30 @@ footer a:hover {
   .pc-hide {
     display: none !important;
   }
-
+  .AMwrapper .AMinfo {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 120%;
+    right: 5%;
+    background-color: #fff;
+    padding: .5rem;
+    width: max-content;
+    transform: translateY(-50%);
+    border-radius: 0.25rem;
+  }
+  .AMwrapper .AMinfo:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent #FFFFFF transparent transparent;
+    top: 11px;
+    left: -20px;
+    font-size: 1em;
+}
   #overlay {
     /* transform: scale(1);
     position: fixed;
