@@ -110,7 +110,7 @@ const MainApp = () => {
     // this will update content
     const becontent = copyOf(content);
     console.log(becontent["content"], "fdf");
-    becontent["content"].push({
+    becontent["content"].unshift({  // unshift || push [to start, to end ]
       id: id,
       notes: [],
       title: titleName,
