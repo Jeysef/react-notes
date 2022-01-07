@@ -41,6 +41,7 @@ Use a more readable tab size (opinionated).
   --main-gray4: #313131;
   --main-gray5: #181818;
   --main-black: #000000;
+  --notes-bg: #b3b3b3c7;
   --second-darkblue: #1717a0;
   --second-lightblue: #82d5d5;
   --second-bg-main: var(--second-darkblue);
@@ -839,7 +840,7 @@ body {
   padding-bottom: 0.5rem;
   width: 100%;
   --bg-opacity: 1;
-  background-color: var(--main-bg-white);
+  background-color: var(--notes-bg);
   --text-opacity: 1;
   color: var(--main-gray4);
   border-radius: 0.5rem;
