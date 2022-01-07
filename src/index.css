@@ -31,8 +31,8 @@ Use a more readable tab size (opinionated).
   --card-bg-overlay: #282c34;
   --main-bg-white: #e4e4e4;
   --main-bg-main: var(--main-orange);
-  --main-bg-second:var(--main-gray2);
-  --main-orange: #C48237;
+  --main-bg-second: var(--main-gray2);
+  --main-orange: #c48237;
   --main-orange2: #ff9900;
   --main-white: #ffffff;
   --main-gray1: #cccccc;
@@ -643,11 +643,11 @@ body {
 .header {
   z-index: 3;
   display: flex;
-  background-color: rgb(68, 187, 167);
+  background-color: none;
   background-image: linear-gradient(
-    270deg,
-    rgb(68, 187, 167),
-    rgb(214, 97, 224)
+    180deg,
+    #ceb18f,
+    rgba(34, 30, 22, 0.26) 90%
   );
   --headerHeight: 40px;
   max-height: var(--headerHeight);
@@ -655,19 +655,26 @@ body {
   top: 0;
   left: 0;
   min-width: 100%;
-  max-height: 40px;
-  min-height: 38px;
+  height: var(--headerHeight);
 }
 .logo {
   justify-content: center;
   text-align: center;
   vertical-align: middle;
-  background-color: rgba(102, 102, 102, 0.741);
+  background-color: var(--main-gray3);
   height: 100%;
   height: 38px;
   aspect-ratio: 1;
   border-radius: 50%;
   margin: auto 0;
+  display: flex;
+  align-content: center;
+}
+.logo > div {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-self: center;
 }
 .imageIcon {
   transform: scale(73%);
@@ -775,14 +782,18 @@ body {
 }
 .main {
   display: flex;
-  background-image: linear-gradient( 245deg, var(--main-bg-main), var(--main-bg-second)) ;
+  background-image: linear-gradient(
+    245deg,
+    var(--main-bg-main),
+    var(--main-bg-second)
+  );
   min-height: 100vh;
   margin: 0;
 }
 .main .wrapper {
   align-items: flex-start;
   width: 100vw;
-  margin-top: 40px;
+  margin-top: var(--headerHeight);
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 2.5rem;
@@ -1177,12 +1188,14 @@ footer a:hover {
   background: var(--main-button-green-active);
 }
 
-
 #secondPage {
   height: 100vh;
   overflow: hidden;
 
-  background-image: radial-gradient( var(--second-bg-main), var(--second-bg-second));
+  background-image: radial-gradient(
+    var(--second-bg-main),
+    var(--second-bg-second)
+  );
   /* background-color: rgb(130, 213, 213); */
 }
 .wrapinfocard {
@@ -1254,7 +1267,6 @@ footer a:hover {
   position: relative;
 }
 .AMwrapper .AMtitle {
-
 }
 .AMwrapper .AMinfo {
   /* display: none; */
@@ -1370,7 +1382,9 @@ footer a:hover {
   }
   .main {
     background-image: linear-gradient(
-      100deg, var(--main-bg-main), var(--main-bg-second)
+      100deg,
+      var(--main-bg-main),
+      var(--main-bg-second)
     );
   }
   .main .wrapper {
@@ -1392,7 +1406,7 @@ footer a:hover {
     left: 120%;
     right: 5%;
     background-color: #fff;
-    padding: .5rem;
+    padding: 0.5rem;
     width: max-content;
     transform: translateY(-50%);
     border-radius: 0.25rem;
@@ -1404,11 +1418,11 @@ footer a:hover {
     height: 0;
     border-width: 10px;
     border-style: solid;
-    border-color: transparent #FFFFFF transparent transparent;
+    border-color: transparent #ffffff transparent transparent;
     top: 11px;
     left: -20px;
     font-size: 1em;
-}
+  }
   #overlay {
     /* transform: scale(1);
     position: fixed;
