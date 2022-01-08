@@ -1,8 +1,6 @@
 import { FaTimes } from "react-icons/fa";
-import { useState } from "react";
-const LoginForm = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+const LoginForm = ({username, setUsername, password, setPassword}) => {
+  
 
   const submit = () => {
     toogle();

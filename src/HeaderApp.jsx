@@ -1,10 +1,12 @@
 // import logo from './logo.svg';
-import React, { Component } from "react";
+import { useState } from "react";
 import "./index.css";
-import LoginForm, { toogle } from "./components/loginForm";
+import LoginForm  from "./components/loginForm";
 import BurgerMenu from "./components/BurgerMenu";
 
 const HeaderApp = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   /*
 
   * FUNCTIONS
@@ -36,7 +38,7 @@ const HeaderApp = () => {
       <div className="wrapper mob-hide">
         <ul>
           <li className="bookmark">
-            <p>Files</p>
+            <p>Save</p>
           </li>
           <li
             className="bookmark flex-between"
@@ -83,7 +85,7 @@ const HeaderApp = () => {
               onClick={toogle}
             ></div>
             <p>log in</p>
-            <LoginForm />
+            <LoginForm username={username} setUsername={setUsername} password={password} setPassword={setPassword}/>
           </li>
           <li className="bookmark">
             <a href="#secondPage">About Me</a>
