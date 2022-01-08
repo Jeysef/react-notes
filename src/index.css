@@ -4,6 +4,10 @@
 Document
 ========
 */
+/* imports */
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap'); /* Raleway */
+@import url("https://use.typekit.net/pti4cpg.css"); /* Muli */
+@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Source+Sans+Pro:wght@400;600&display=swap');  /* source sans pro */
 
 /**
 Use a better box model (opinionated).
@@ -345,10 +349,11 @@ ul {
 
 html,
 body {
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 1 */
-  line-height: 1.5; /* 2 */
+  font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif; 
+  line-height: 1.5; 
+  /* font-family: muli, sans-serif; */
+  font-weight: 500;
+  font-style: normal;
 }
 
 /**
@@ -648,7 +653,7 @@ body {
   --headerHeight: 40px;
   max-height: var(--headerHeight);
   position: fixed;
-  inset: auto 0 0 auto;
+  inset: auto 0 0 0;
   min-width: 100%;
   height: var(--headerHeight);
   border-top: rgb(145, 145, 145) solid 1px;
@@ -851,12 +856,14 @@ body {
 .CardTitle {
   min-width: 40%;
   padding: 0.25rem;
-  font-weight: 700;
-  --text-opacity: 1;
   color: var(--main-gray5);
   position: relative;
   word-wrap: anywhere;
   outline: none !important;
+
+  font-family: muli, sans-serif;
+  font-weight: 700;
+  font-style: italic;
 }
 .blacker {
   transform: scale(0);
@@ -1466,7 +1473,7 @@ footer a:hover {
     --headerHeight: 40px;
     max-height: var(--headerHeight);
     position: fixed;
-    inset: 0 auto 0 auto;
+    inset: 0 auto 0 0;
     min-width: 100%;
     height: var(--headerHeight);
     border-top: rgb(145, 145, 145) solid 0px;
