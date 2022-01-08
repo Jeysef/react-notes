@@ -7,6 +7,7 @@ import BurgerMenu from "./components/BurgerMenu";
 const HeaderApp = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const menu = ["Save", "Color", "Log in", "About Me"]
   /*
 
   * FUNCTIONS
@@ -38,13 +39,13 @@ const HeaderApp = () => {
       <div className="wrapper mob-hide">
         <ul>
           <li className="bookmark">
-            <p>Save</p>
+            <p >{menu[0]}</p>
           </li>
           <li
             className="bookmark flex-between"
             onClick="toogleBackgroundColourMenu()"
           >
-            <p>Color</p>
+            <p>{menu[1]}</p>
             <div className="BackgroundColorDropMenu">
               <div style={{ borderRadius: "0.25rem" }}>
                 <div className="NotePopupTitle">
@@ -84,15 +85,15 @@ const HeaderApp = () => {
               }}
               onClick={toogle}
             ></div>
-            <p>log in</p>
-            <LoginForm username={username} setUsername={setUsername} password={password} setPassword={setPassword}/>
+            <p>{menu[2]}</p>
+            <LoginForm username={username} setUsername={setUsername} password={password} setPassword={setPassword} />
           </li>
           <li className="bookmark">
-            <a href="#secondPage">About Me</a>
+            <a href="#secondPage">{menu[3]}</a>
           </li>
         </ul>
       </div>
-      <BurgerMenu />
+      <BurgerMenu  menu={menu}/>
     </>
   );
 };

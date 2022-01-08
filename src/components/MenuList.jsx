@@ -1,6 +1,6 @@
 import React from "react";
 
-const Menulist = () => {
+const Menulist = ({menu}) => {
   const toogle = (event) => {
     if (event.target.tagName !== "INPUT")
       document.getElementById("menu__toggle").checked =
@@ -41,7 +41,7 @@ const Menulist = () => {
             toogle(event);
           }}
         >
-          Files
+          {menu[0]}
         </a>
       </li>
       <li>
@@ -52,7 +52,7 @@ const Menulist = () => {
             toogle(event);
           }}
         >
-          Color
+          {menu[1]}
         </a>
       </li>
       <li>
@@ -63,7 +63,7 @@ const Menulist = () => {
             toogle(event);
           }}
         >
-          Settings
+          {menu[2]}
         </a>
       </li>
       <li>
@@ -74,7 +74,7 @@ const Menulist = () => {
             toogle(event);
           }}
         >
-          About Me
+          {menu[3]}
         </a>
       </li>
     </ul>
