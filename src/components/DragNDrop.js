@@ -13,7 +13,7 @@ function DragNDrop({data}) {
     const dragItemNode = useRef();
     
     const handletDragStart = (e, item) => {
-        console.log('Starting to drag', item)
+        // console.log('Starting to drag', item)
 
         dragItemNode.current = e.target;
         dragItemNode.current.addEventListener('dragend', handleDragEnd)
@@ -24,9 +24,9 @@ function DragNDrop({data}) {
         },0)       
     }
     const handleDragEnter = (e, targetItem) => {
-        console.log('Entering a drag target', targetItem)
+        // console.log('Entering a drag target', targetItem)
         if (dragItemNode.current !== e.target) {
-            console.log('Target is NOT the same as dragged item')
+            // console.log('Target is NOT the same as dragged item')
             setList(oldList => {
                 let newList = JSON.parse(JSON.stringify(oldList))
                 newList[targetItem.grpI].items.splice(targetItem.itemI, 0, newList[dragItem.current.grpI].items.splice(dragItem.current.itemI,1)[0])

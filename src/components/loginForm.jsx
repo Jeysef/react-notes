@@ -15,7 +15,7 @@ const LoginForm = () => {
     document.getElementById("menu-window-toogle").checked =
       !document.getElementById("menu-window-toogle").checked;
     if (document.getElementById("menu-window-toogle").checked) {
-      console.log(document.getElementsByClassName("menu-window-center")[0].style)
+      // console.log(document.getElementsByClassName("menu-window-center")[0].style)
       document.getElementsByClassName("menu-window-center")[0].style.transform = "scale(0)";
       document.getElementById("overlay").style.transform = "scale(0)";
     } else {

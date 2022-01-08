@@ -109,7 +109,7 @@ const MainApp = () => {
     }
     // this will update content
     const becontent = copyOf(content);
-    console.log(becontent["content"], "fdf");
+    // console.log(becontent["content"], "fdf");
     becontent["content"].unshift({  // unshift || push [to start, to end ]
       id: id,
       notes: [],
@@ -159,7 +159,7 @@ const MainApp = () => {
         i--;
       }
     }
-    console.log(content, becontent);
+    // console.log(content, becontent);
     setContent(becontent);
   };
   // mark Note
@@ -167,7 +167,7 @@ const MainApp = () => {
     const becontent = copyOf(content);
     becontent["content"][cardId]["notes"][noteId]["mark"] =
       !becontent["content"][cardId]["notes"][noteId]["mark"];
-    console.log(content, becontent);
+    // console.log(content, becontent);
 
     setContent(becontent);
   };

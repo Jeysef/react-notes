@@ -3,7 +3,7 @@ import "./stylesForComponents/hamburgerMenu.css";
 
 const BurgerMenu = () => {
     const handleToogle = () => {
-      console.log(document.getElementsByClassName("menu__toggle")[0])
+      // console.log(document.getElementsByClassName("menu__toggle")[0])
   if ( document.getElementsByClassName("menu__box")[0].classList.contains('transition_opening') ) {
     document.getElementsByClassName("menu__box")[0].classList.remove('transition_opening');
   }

@@ -38,7 +38,7 @@ const Cards = ({
   const handletDragStart = (e, itemIDND) => {
     e.dataTransfer.dropEffect = "move";
     // e.target.style.cursor = 'move';
-    console.log("Starting to drag", itemIDND);
+    // console.log("Starting to drag", itemIDND);
 
     dragItemNode.current = e.target;
     dragItemNode.current.addEventListener("dragend", handleDragEnd);
@@ -55,9 +55,9 @@ const Cards = ({
     return JSON.parse(JSON.stringify(Data));
   };
   const handleDragEnter = (e, itemIdDND) => {
-    console.log("Entering a drag target", itemIdDND);
+    // console.log("Entering a drag target", itemIdDND);
     if (dragItemNode.current !== e.target) {
-      console.log("Target is NOT the same as dragged item");
+      // console.log("Target is NOT the same as dragged item");
       setDataDND((oldData) => {
         let newdataDND = copyOf(oldData);
         newdataDND["content"].splice(
@@ -160,7 +160,7 @@ const Cards = ({
           <textarea
             value={noteTitle.id === card.id ? noteTitle.value : ""}
             onChange={(e) => {
-              console.log("tar", e.target);
+              // console.log("tar", e.target);
               setnoteTitle({ value: e.target.value, id: card.id });
             }}
             spellCheck="false"
