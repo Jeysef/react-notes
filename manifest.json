@@ -1,6 +1,7 @@
 {
   "short_name": "Notes",
-  "name": "Notes",
+  "name": "Notes - Created by Jeysef",
+  "description": "A place where you create memories",
   "icons": [
     {
       "src": "favicon.ico",
@@ -18,8 +19,9 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
+  "scope": "/",
   "theme_color": "#000000",
   "background_color": "#ffffff"
 }
