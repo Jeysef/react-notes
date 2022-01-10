@@ -1,14 +1,13 @@
 {
   "files": {
     "main.css": "/react-notes/static/css/main.bc0b2771.css",
-    "main.js": "/react-notes/static/js/main.03baac8b.js",
-    "service-worker.js": "/react-notes/service-worker.js",
+    "main.js": "/react-notes/static/js/main.1113d387.js",
     "index.html": "/react-notes/index.html",
     "main.bc0b2771.css.map": "/react-notes/static/css/main.bc0b2771.css.map",
-    "main.03baac8b.js.map": "/react-notes/static/js/main.03baac8b.js.map"
+    "main.1113d387.js.map": "/react-notes/static/js/main.1113d387.js.map"
   },
   "entrypoints": [
     "static/css/main.bc0b2771.css",
-    "static/js/main.03baac8b.js"
+    "static/js/main.1113d387.js"
   ]
 }
