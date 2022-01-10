@@ -19,8 +19,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "https://jeysef.github.io/react-notes/",
-  "scope": "https://jeysef.github.io/react-notes/",
+  "start_url": "/",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
