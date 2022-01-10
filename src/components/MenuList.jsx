@@ -17,7 +17,7 @@ const Menulist = ({menu}) => {
         >
           <div className="logo">
             <div>
-              <img className="imageIcon" src="./favicon.ico" alt="Icon" />
+              <img className="imageIcon" src={process.env.PUBLIC_URL + '/images/favicon.ico'} alt="Icon" />
             </div>
           </div>
         </div>

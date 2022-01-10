@@ -4,29 +4,26 @@
   "description": "A place where you create memories",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "images/favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "images/webpage_logo-192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "images/webpage_logo-512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
   "start_url": "/",
+  "scope": "/",
+  "background_color": "#FFF",
   "display": "standalone",
-  "scope": "/react-notes/",
-  "theme_color": "#000000",
-  "background_color": "#ffffff",
-  
-  "dir": "ltr",
+  "theme_color": "#FFF",
   "lang": "en-US",
   "orientation": "portrait-primary"
-
 }
