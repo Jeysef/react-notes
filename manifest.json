@@ -19,7 +19,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "#main",
+  "start_url": "/",
   "display": "standalone",
   "scope": "/react-notes/",
   "theme_color": "#000000",
